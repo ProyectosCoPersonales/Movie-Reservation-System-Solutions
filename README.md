@@ -67,11 +67,11 @@ los asientos para cada película.
 
 **RUTA PARA HACER UNA RESERVACIÓN** GET '/{horarioid}/occupied-seats' 
 
-![image](https://github.com/user-attachments/assets/c2ea0683-b704-47f2-a780-d04c1f9a0720)
+![image](https://github.com/user-attachments/assets/e68d5e47-e013-4a9a-a83f-cabdcf2685f2)
 
 Se pensaba mejorar el sistema de facturación pero por falta de tiempo se quedó así, pero los asientos quedan reservados y bloqueados por lo tanto no pueden volverse a seleccionar
 
-![image](https://github.com/user-attachments/assets/7e7a83fa-2551-4137-9c7c-8fec555c0eb8)
+![image](https://github.com/user-attachments/assets/7ede1caf-0dc7-472c-ac06-ab65742ed647)
 
 
 Administradores (Admin): Tienen acceso a funciones avanzadas como la gestión de películas y horarios, así como la administración de usuarios y generación de reportes.
