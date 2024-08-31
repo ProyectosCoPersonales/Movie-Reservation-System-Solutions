@@ -80,7 +80,31 @@ Utiliza horarioId para tener un espacio exclusivo para cada función de Cine.
 
 ![image](https://github.com/user-attachments/assets/85c5c34a-891b-4b0c-9efe-dc2b36a21367)
 
+**TODOS LAS RESERVACIONES SE AÑADIERON EXISTOSAMENTE**
+
+![image](https://github.com/user-attachments/assets/e9b04078-f379-411b-9d0b-2af4236360a8)
+
+
 #Administradores (Admin)
 
 Tienen acceso a funciones avanzadas como la gestión de películas y horarios, así como la administración de usuarios y generación de reportes.
+
+**AHORA SI ALGUIEN INICIA SESIÓN CON UN USUARIO ADMIN**
+
+Tiene una serie de rutas las cuales puede usar para manipular los registros de la base de datos, tanto de los usuarios, películas, horarios y
+salas de cine. El admin tiene todos los permisos puede GET, POST, DELETE y buscar registros por el ID.
+
+**RUTAS ADMIN**
+
+
+![image](https://github.com/user-attachments/assets/587be1bc-e70d-4e5f-855a-98bb82b17d40)
+
+
+![image](https://github.com/user-attachments/assets/cc34f9f6-e600-482e-9032-7dd40614a787)
+
+
+![image](https://github.com/user-attachments/assets/ba5f04c9-00e2-431d-929d-d00e9cc99594)
+
+
+![image](https://github.com/user-attachments/assets/2b2e8402-e8e9-42fe-9edb-a66fdb0dcc6d)
 
