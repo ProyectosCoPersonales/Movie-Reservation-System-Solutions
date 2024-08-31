@@ -1,0 +1,129 @@
+*{
+  font-family: 'Oswald', sans-serif;
+}
+body {
+  background: #69140E;
+  color: #FFFFFA;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-top: 15px;
+}
+
+h1{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  color: aliceblue;
+  margin-top: 20px;
+}
+
+.pantalla {
+  text-align: center;
+  font-size: 24px;
+  color: #fff;
+  background-color: #fc8484;
+  height: 40px;
+  width: 600px;
+  border-radius: 5%;
+  margin-bottom: 20px;
+}
+
+
+#cine-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.asientos {
+  border-collapse: collapse;
+}
+
+.asientos th, .asientos td {
+  width: 40px;
+  height: 65px;
+  text-align: center;
+}
+
+.asiento-btn {
+  width: 100%;
+  height: 100%;
+  background-color: #912F40;
+  color: #FFFFFA;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  padding-top: 5px;
+}
+
+.asiento-btn i {
+  font-size: 25px;
+}
+
+/* Efecto al pasar el cursor por el botón */
+.asiento-btn:hover {
+  background-color: #FFFFFA;
+  color: #702632;
+  transform: scale(1.1);
+}
+
+.seleccionado {
+  background-color: #FFFFFA;
+  color: #702632;
+}
+
+.no-seleccionado {
+  background-color: #555;
+  cursor: pointer;
+}
+
+.ocupado {
+  background-color: #ffffff; /* Rojo para indicar ocupado */
+  cursor: not-allowed; /* Cambia el cursor para indicar que no se puede hacer clic */
+}
+
+#mostrar-asientos {
+  padding: 10px 20px;
+  background-color: #FFFFFA;
+  color: #333;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+#mostrar-asientos:hover {
+  background-color: #702632;
+  color:#FFFFFA;
+
+}
+
+.container {
+  text-align: center;
+}
+#mostrar-asientos, #reservar-btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 10px;
+}
+#mostrar-asientos:hover, #reservar-btn:hover {
+  background-color: #2980b9;
+}
+#reservar-btn {
+  display: none; /* Inicialmente oculto */
+}
+#resultado {
+  margin-top: 20px;
+}

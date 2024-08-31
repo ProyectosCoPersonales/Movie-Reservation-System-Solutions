@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.65">
+    <title>PelículasForm</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.5.1/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.5.1/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.5.1/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.5.1/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <link rel="stylesheet" href="/View/MovieForm/MovieForm.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <!-- Perfil -->
+            <li>
+                <a href="#">
+                    <i class="fas fa-user-circle"></i>
+                    <span class="nav-item">Perfil</span>
+                </a>
+            </li>
+            <!-- Usuario -->
+            <li>
+                <a href="/View/UserForm/UserForm.html">
+                    <i class="fas fa-user"></i>
+                    <span class="nav-item">Usuario</span>
+                </a>
+            </li>
+            <!-- Películas -->
+            <li>
+                <a href="/View/MovieForm/MovieForm.html">
+                    <i class="fas fa-film"></i>
+                    <span class="nav-item">Películas</span>
+                </a>
+            </li>
+            <!-- Horarios -->
+            <li>
+                <a href="/View/ShowtimeForm/ShowtimeForm.html">
+                    <i class="fas fa-clock"></i>
+                    <span class="nav-item">Horarios</span>
+                </a>
+            </li>
+            <!-- Salas de Cine -->
+            <li>
+                <a href="/View/HallCinema/HallCinemaForm.html">
+                    <i class="fas fa-chair"></i>
+                    <span class="nav-item">Salas de Cine</span>
+                </a>
+            </li>
+            <!-- Logout -->
+            <li>
+                <a href="/View/Login/Login.html">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span class="nav-item">Logout</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="contenedor-formulario">
+        <h1>Películas</h1>
+        <div class="content_buttons">
+        <button class="eventButton" onclick="mostrarSeccion('crearPelicula')">
+            <i class="fi fi-rr-film"></i>Crear
+        </button>
+        <button class="eventButton" onclick="mostrarSeccion('mostrarPeliculas')">
+            <i class="fi fi-sr-eye"></i>Mostrar
+        </button>
+        </div>
+        <div id="crearPelicula" style="display: block;">
+            <form id="Movie">
+                <label for="title">Título:</label>
+                <input type="text" id="title" name="title" required placeholder="Ingrese el título de la película">
+                <br>
+                <label for="description">Descripción:</label>
+                <textarea id="description" name="description" required placeholder="Ingrese la descripción de la película"></textarea>
+                <br>
+                <label for="posterImage">URL del póster:</label>
+                <input type="text" id="posterImage" name="posterImage" required placeholder="Ingrese la URL del póster">
+                <br>
+                <label for="genre">Género:</label>
+                <select name="genre" id="genre">
+                    <option value="drama">Drama</option>
+                    <option value="thriller">Thriller</option>
+                    <option value="comedy">Comedia</option>
+                    <option value="fantasy">Fantasía</option>
+                    <option value="romance">Romance</option>
+                    <option value="fiction">Ciencia Ficción</option>
+                    <option value="adventure">Aventura</option>
+                    <option value="sports">Deportes</option>
+                    <option value="action">Acción</option>e
+                    <option value="western">Western</option>
+                    <option value="horror">Terror</option>
+                    <option value="musical">Musical</option>
+                    <option value="mystery">Misterio</option>
+                </select>
+                <br>
+                <label for="duracion">Duración:</label>
+                <input type="text" id="duracion" name="duracion" required placeholder="Ingrese la duración de la película">
+                <br>
+                <input type="submit" value="Agregar Película">
+            </form>
+        </div>
+        <div id="mostrarPeliculas" style="display: none;">
+            <div class="content_buttons">
+                <label for="id">ID:</label>
+                <input type="id" id="id" name="id" placeholder="Ingrese un número">
+                <button class="eventButton" onclick="EliminarPelicula()">
+                    <span class="material-symbols-outlined" style="font-size: 20px">
+                    moviedelete</span>Eliminar</button>
+                <button class="eventButton" onclick="BuscarPelicula()">
+                    <span class="material-symbols-outlined" style="font-size: 20px">
+                        moviesearch</span>Buscar</button>
+            </div>
+            <table id="MoviesMostrarDatos">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Título</th>
+                        <th>Descripción</th>
+                        <th>URL del Póster</th>
+                        <th>Género</th>
+                        <th>Duración</th>
+                    </tr>
+                </thead>
+                <tbody>
+            
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="wrap">
+        <div class="widget">
+            <div class="fecha">
+               <p id="diaSemana" class="diaSemana"></p>
+               <p id="dia" class="dia"></p>
+               <p>de</p>
+               <p id="mes" class="mes"></p>
+               <p>del</p>
+               <p id="year" class="year"></p>
+            </div>
+
+            <div class="reloj">
+               <p id="hora" class="hora"></p>
+               <p>:</p>
+               <p id="minutos" class="minutos"></p>
+               <p>:</p>
+               <div class="caja-segundos">
+                    <p id="ampm" class="ampm"></p>
+                    <p id="segundos" class="segundos"></p>                   
+               </div>
+                
+            </div>
+        </div>
+    </div>
+<script src="/View/MovieForm/MovieForm.js"></script>
+</body>
+</html>

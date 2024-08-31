@@ -1,0 +1,132 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Oswald", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #87ceeb, #8a2be2, #ffd700);
+  background-size: 300% 300%;
+  animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 900px; /* Ajusta el ancho para que ambas secciones quepan cómodamente */
+  height: 400px;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+  position: absolute; /* Para mantenerlo en el centro estático */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex; /* Habilitar flexbox para alinear la imagen y el formulario */
+}
+
+.image-section {
+  flex: 1;
+  background-image: url('https://media-public.canva.com/MbcM0/MAFMm1MbcM0/1/tl.png');
+  background-size: cover;
+  background-position: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.form-section {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+}
+.container.expanded {
+  width: 900px;
+  height: 600px;
+}
+h2 {
+  text-align: center;
+  color: #4a00e0;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease-in-out;
+  font-size: 30px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+  font-size: 17px;
+}
+form.fade-out {
+  opacity: 0;
+}
+label {
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+input,
+select {
+  padding: 0.2rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  font-family: "Oswald", sans-serif;
+}
+button {
+  padding: 0.5rem;
+  background-color: #4a00e0;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "Oswald", sans-serif;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+button:hover {
+  background-color: #3c00b3;
+}
+.toggle-form {
+  text-align: center;
+  margin-top: 1rem;
+}
+.toggle-form a {
+  color: #4a00e0;
+  text-decoration: none;
+}
+.hidden {
+  display: none;
+}
+@media (max-width: 1024px) {
+  .container {
+    width: 90%;
+    height: auto;
+    flex-direction: column;
+  }
+  .container.expanded {
+    width: 90%;
+    height: auto;
+  }
+  .image-section {
+    height: 200px;
+  }
+  .form-section {
+    padding: 1.5rem;
+  }
+}

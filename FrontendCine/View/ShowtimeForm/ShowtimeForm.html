@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.65">
+    <title>Formulario de Horarios</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.5.1/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.5.1/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.5.1/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.5.1/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <link rel="stylesheet" href="ShowtimeForm.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <!-- Perfil -->
+            <li>
+                <a href="#">
+                    <i class="fas fa-user-circle"></i>
+                    <span class="nav-item">Perfil</span>
+                </a>
+            </li>
+            <!-- Usuario -->
+            <li>
+                <a href="/View/UserForm/UserForm.html">
+                    <i class="fas fa-user"></i>
+                    <span class="nav-item">Usuario</span>
+                </a>
+            </li>
+            <!-- Películas -->
+            <li>
+                <a href="/View/MovieForm/MovieForm.html">
+                    <i class="fas fa-film"></i>
+                    <span class="nav-item">Películas</span>
+                </a>
+            </li>
+            <!-- Horarios -->
+            <li>
+                <a href="/View/ShowtimeForm/ShowtimeForm.html">
+                    <i class="fas fa-clock"></i>
+                    <span class="nav-item">Horarios</span>
+                </a>
+            </li>
+            <!-- Salas de Cine -->
+            <li>
+                <a href="/View/HallCinema/HallCinemaForm.html">
+                    <i class="fas fa-chair"></i>
+                    <span class="nav-item">Salas de Cine</span>
+                </a>
+            </li>
+            <!-- Logout -->
+            <li>
+                <a href="/View/Login/Login.html">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span class="nav-item">Logout</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="contenedor-formulario">
+        <h1>Horarios de Cine</h1>
+        <div class="content_buttons">
+            <div>
+                <form id="generateReservationsForm">
+                    <button type="button" class="eventButton" onclick="generarReservaciones()">Generar Reservaciones</button>
+                </form>                
+            </div>
+            <button class="eventButton" onclick="mostrarSeccion('crearHorario')">
+                <i class="fi fi-rr-clock"></i>Crear
+            </button>
+            <button class="eventButton" onclick="mostrarSeccion('mostrarHorarios')">
+                <i class="fi fi-sr-eye"></i>Mostrar
+            </button>
+        </div>
+        <div id="crearHorario" style="display: block;">
+            <form id="HorarioCine">
+                <label for="movieId">ID de la Película:</label>
+                <input type="text" id="movieId" name="movieId" required placeholder="Ingrese el ID de la película">
+                <br>
+                <label for="hallId">ID de la Sala:</label>
+                <input type="text" id="hallId" name="hallId" required placeholder="Ingrese el ID de la sala de cine">
+                <br>
+                <label for="anio">Año:</label>
+                <input type="text" id="anio" name="anio" required placeholder="Ingrese el año">
+                <br>
+                <label for="mes">Mes:</label>
+                <input type="text" id="mes" name="mes" required placeholder="Ingrese el mes">
+                <br>
+                <label for="dia">Día:</label>
+                <input type="text" id="dia" name="dia" required placeholder="Ingrese el día">
+                <br>
+                <label for="hora">Hora:</label>
+                <input type="text" id="hora" name="hora" required placeholder="Ingrese la hora">
+                <br>
+                <label for="minutos">Minutos:</label>
+                <input type="text" id="minutos" name="minutos" required placeholder="Ingrese los minutos">
+                <br>
+                <input type="submit" value="Agregar Horario">
+            </form>
+        </div>
+        <div id="mostrarHorarios" style="display: none;">
+            <div class="content_buttons">
+                <label for="id">ID:</label>
+                <input type="text" id="id" name="id" placeholder="Ingrese un número">
+                <button class="eventButton" onclick="EliminarHorario()">
+                    <span class="material-symbols-outlined" style="font-size: 20px">scheduledelete</span>Eliminar
+                </button>
+                <button class="eventButton" onclick="BuscarHorario()">
+                    <span class="material-symbols-outlined" style="font-size: 20px">schedulesearch</span>Buscar
+                </button>
+            </div>
+            <table id="HorariosMostrarDatos">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>ID de Película</th>
+                        <th>ID de Sala</th>
+                        <th>Año</th>
+                        <th>Mes</th>
+                        <th>Día</th>
+                        <th>Hora</th>
+                        <th>Minutos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div class="wrap">
+        <div class="widget">
+            <div class="fecha">
+               <p id="diaSemana" class="diaSemana"></p>
+               <p id="dia" class="dia"></p>
+               <p>de</p>
+               <p id="mes" class="mes"></p>
+               <p>del</p>
+               <p id="year" class="year"></p>
+            </div>
+
+            <div class="reloj">
+               <p id="hora" class="hora"></p>
+               <p>:</p>
+               <p id="minutos" class="minutos"></p>
+               <p>:</p>
+               <div class="caja-segundos">
+                    <p id="ampm" class="ampm"></p>
+                    <p id="segundos" class="segundos"></p>                   
+               </div>
+                
+            </div>
+        </div>
+    </div>
+<script src="ShowtimeForm.js"></script>
+</body>
+</html>

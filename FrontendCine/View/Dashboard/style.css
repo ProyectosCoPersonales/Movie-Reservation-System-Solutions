@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
+
+:root{
+    color-scheme: dark;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 100px;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    margin: 20px 0;
+    background: linear-gradient(90deg, #f54291, #42f5e6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    animation: gradientMove 5s linear infinite; 
+}
+
+.icon {
+    width: 1em; /* Tamaño del ícono */
+    height: 1em; /* Tamaño del ícono */
+    vertical-align: middle; /* Alineación vertical del ícono */
+    fill: #f54291; /* Color inicial del ícono */
+    margin-right: 0.2em; /* Espacio entre ícono y texto */
+    animation: pulse 2s infinite; /* Animación del ícono */
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        fill: #f54291; /* Color inicial */
+    }
+    50% {
+        transform: scale(1.2);
+        fill: #42f5e6; /* Color intermedio */
+    }
+    100% {
+        transform: scale(1);
+        fill: #f54291; /* Color final */
+    }
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+
+main{
+    height: auto;
+    width: 85%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 450px;
+    min-width: 250px;
+    margin: 20px;
+    overflow: hidden;
+    border: 5px solid transparent; 
+    position: relative;
+    z-index: 1;
+    background-color: #fff; 
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.card:before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 5px solid transparent;
+    border-radius: 5px;
+    background: linear-gradient(45deg, #f54291, #42f5e6, #f54291, #42f5e6);
+    background-size: 400% 400%;
+    z-index: -1;
+    animation: borderAnimation 4s linear infinite;
+}
+
+@keyframes borderAnimation {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.card:hover {
+    box-shadow: 0 0 100px rgba(255, 105, 180, 1);
+}
+
+
+
+.card img{
+    max-height: 400px;
+    max-width: 250px;
+    object-fit: cover;
+}
+
+*:before,
+*:after {
+  z-index: -1;
+  box-sizing: border-box;
+  transition: 0.5s ease-in-out;
+}
+
+a {
+  text-decoration: none;
+  line-height: 80px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-size: 45px;
+  font-family: "Oswald";
+}
+
+[class^=btn-] {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  height: 80px;
+  max-width: 250px;
+  text-transform: uppercase;
+  border: 1px solid currentColor;
+}
+
+.btn-3:before, .btn-3:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-top: 40px solid #ffffff;
+  border-bottom: 40px solid #ffffff;
+}
+.btn-3:before {
+  border-right: 40px solid transparent;
+  transform: translateX(-100%);
+}
+.btn-3:after {
+  border-left: 40px solid transparent;
+  transform: translateX(100%);
+}
+.btn-3:hover {
+  color: #dad6eb;
+}
+.btn-3:hover:before {
+  transform: translateX(-30%);
+}
+.btn-3:hover:after {
+  transform: translateX(30%);
+}

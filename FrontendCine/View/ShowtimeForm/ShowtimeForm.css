@@ -1,0 +1,324 @@
+:root{
+    color-scheme: dark;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contenedor-formulario {
+    position: relative;
+    z-index: 10;
+    margin-left: 100px; 
+    padding: 20px;
+    width: calc(100% - 250px - 20px); 
+    background-color: #3d3d3d; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-bottom: auto;
+  }
+
+  nav {
+    text-decoration: none;
+    position: fixed;
+    height: 100vh;
+    z-index: 15;
+    background: #1E1E1E; /* Fondo oscuro para la barra de navegación */
+    width: 90px;
+    overflow: hidden;
+    transition: width 0.2s linear;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.5);
+    font-family: 'Oswald', sans-serif;
+    margin-bottom: auto;
+}
+
+.logo {
+    text-align: center;
+    display: flex;
+    transition: all 0.5s ease;
+    margin: 10px 0 0 10px;
+}
+
+.logo img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.logo span {
+    font-weight: bold;
+    padding: 15px;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #E0E0E0; /* Texto en color claro */
+}
+
+a {
+    position: relative;
+    color: #ffffff; /* Color gris claro para los enlaces */
+    font-size: 20px;
+    display: table;
+    width: 300px;
+    padding: 10px;
+}
+
+.fas {
+    position: relative;
+    width: 70px;
+    height: 40px;
+    top: 14px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.nav-item {
+    position: relative;
+    top: 12px;
+    margin-left: 10px;
+}
+
+a:hover {
+    background: #333333; 
+}
+
+nav:hover {
+    width: 280px;
+    transition: all 0.5s ease;
+}
+
+.logout {
+    position: absolute;
+    bottom: 0;
+}
+
+body{
+    background-size: cover;
+    color: #fff;
+    font-size: 8px;
+    display: flex;
+    height: 100vh;
+    justify-content: flex; /* Alinea el contenido a la derecha */
+}
+h1{
+  font-family: 'Oswald', sans-serif;
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+#mostrarHorarios .content_buttons label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    display: block; 
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #ffffff; 
+}
+
+#mostrarHorarios .content_buttons input {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    width: 25%; 
+    padding: 8px;
+    margin-left: 15px;
+    margin-right: 20px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.fi {
+    margin-right: 8px;
+    font-size: 20px;
+}
+
+.content_buttons{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+}
+.eventButton{
+    cursor:pointer;
+    padding: 10px 10px;
+    border-radius: 12px;
+    border:none;
+    font-family: 'Oswald', sans-serif;
+    font-size: 25px;
+    color: #ffffff;
+    margin-left: 30px;
+    margin-right: 30px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.eventButton:hover{
+    color:#000000;
+    background-color: #fff;
+}
+
+form#HorarioCine {
+    font-family: 'Oswald', sans-serif;
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo semitransparente */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 25px;
+}
+
+form#HorarioCine label {
+    font-weight: 200;
+    margin-bottom: 20px;
+    display: block;
+}
+
+form#HorarioCine input[type="text"],
+form#HorarioCine input[type="datetime-local"],
+form#HorarioCine input[type="number"],
+form#HorarioCine select {
+    font-family: 'Oswald', sans-serif;
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 20px;
+}
+
+form#HorarioCine input[type="text"]::placeholder,
+form#HorarioCine input[type="datetime-local"]::placeholder,
+form#HorarioCine input[type="number"]::placeholder {
+    color: #bbb;
+}
+
+
+form#HorarioCine input[type="submit"] {
+    margin-top: 10px;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    font-weight: 600;
+    font-family: 'Oswald', sans-serif;
+    font-size: 25px;
+}
+
+form#HorarioCine input[type="submit"]:hover {
+    color:#ffffff;
+    background-color: #000000;
+    font-family: 'Oswald', sans-serif;
+    font-size: 25px;
+}
+
+form#HorarioCine br {
+    clear: both;
+}
+
+/* Estilos generales para la tabla */
+#HorariosMostrarDatos {
+    border-collapse: collapse;
+    width: 100%;
+    font-family: 'Oswald', sans-serif;
+}
+
+/* Estilos para los encabezados */
+#HorariosMostrarDatos thead {
+    background-color: #333; /* Fondo negro para encabezados */
+    color: #fff; /* Texto blanco para encabezados */
+}
+
+#HorariosMostrarDatos th {
+    border: 3px solid #635b5b;
+    padding: 10px;
+    font-size: 22px; 
+}
+
+
+#HorariosMostrarDatos tbody {
+    background-color: #fff;
+    color: #000; 
+}
+
+#HorariosMostrarDatos td {
+    text-align: left;
+    border: 3px solid #333; 
+    padding: 10px;
+    font-size: 15px;
+    max-width: 20px;
+    
+}
+
+/* Estilo para las filas de la tabla */
+#HorariosMostrarDatos tbody tr:hover {
+    background-color: #f0f0f0; /* Fondo gris claro para la fila al pasar el ratón */
+}
+
+#HorariosMostrarDatos tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Fondo gris claro para filas pares */
+}
+
+#HorariosMostrarDatos tbody tr:nth-child(odd) {
+    background-color: #fff; /* Fondo blanco para filas impares */
+}
+
+
+
+.wrap{
+    width: 20%;
+}
+
+.widget{
+    width: 80%; /* Ajusta el ancho del widget */
+    margin: 30px; /* Elimina el margen para que esté pegado a la derecha */
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+}
+
+.widget p{
+    display: inline-block;
+    line-height: 1em;
+}
+
+.fecha{
+    font-family: 'Oswald', sans-serif;
+    font-size: 4em;
+    text-align: center;
+    margin-bottom: 0.3rem;
+    padding: 1em;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1); 
+    color: #fff; 
+}
+
+.reloj{
+    font-family: 'Oswald', sans-serif;
+    font-size: 5em;
+    text-align: center;
+    margin-bottom: 0.3rem;
+    padding: 1em;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1); 
+    color: #fff; 
+}
+
+.caja-segundos {
+    display: inline-block;  
+}
+
+.caja-segundos .segundos,
+.caja-segundos .ampm {
+    font-size: 1.2rem;
+    display: block;
+}
