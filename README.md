@@ -72,11 +72,13 @@ los asientos para cada película.
 ![image](https://github.com/user-attachments/assets/e68d5e47-e013-4a9a-a83f-cabdcf2685f2)
 
 Se pensaba mejorar el sistema de facturación pero por falta de tiempo se quedó así, pero los asientos quedan reservados y bloqueados por lo tanto no pueden volverse a seleccionar
+Utiliza horarioId para tener un espacio exclusivo para cada función de Cine.
 
 ![image](https://github.com/user-attachments/assets/7ede1caf-0dc7-472c-ac06-ab65742ed647)
 
 ![image](https://github.com/user-attachments/assets/13474aa6-f001-4312-8616-346d1b6a74c8)
 
+![image](https://github.com/user-attachments/assets/85c5c34a-891b-4b0c-9efe-dc2b36a21367)
 
 #Administradores (Admin)
 
