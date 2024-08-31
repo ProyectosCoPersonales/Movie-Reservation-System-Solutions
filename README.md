@@ -37,7 +37,9 @@ Cuando es añadido a la base de datos, la contraseña ya está encriptada.
 ![image](https://github.com/user-attachments/assets/1954589f-ee09-4582-8e84-6334685ef435)
 
 
-Usuarios regulares (User): Pueden acceder a funciones básicas como ver películas, sus horarios y realizar reservas.
+#Usuarios regulares (User)
+
+Pueden acceder a funciones básicas como ver películas, sus horarios y realizar reservas.
 
 **RUTA PARA MOSTRAR TODAS LAS PELÍCULAS** GET '/user/movie'
 
@@ -73,6 +75,10 @@ Se pensaba mejorar el sistema de facturación pero por falta de tiempo se quedó
 
 ![image](https://github.com/user-attachments/assets/7ede1caf-0dc7-472c-ac06-ab65742ed647)
 
+![image](https://github.com/user-attachments/assets/13474aa6-f001-4312-8616-346d1b6a74c8)
 
-Administradores (Admin): Tienen acceso a funciones avanzadas como la gestión de películas y horarios, así como la administración de usuarios y generación de reportes.
+
+#Administradores (Admin)
+
+Tienen acceso a funciones avanzadas como la gestión de películas y horarios, así como la administración de usuarios y generación de reportes.
 
