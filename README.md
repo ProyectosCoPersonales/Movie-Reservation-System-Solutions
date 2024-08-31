@@ -52,11 +52,26 @@ Usuarios regulares (User): Pueden acceder a funciones básicas como ver películ
 La interfaz solo necesita extraer el "id" y el "posterImage" para crear los cards
 El id de movies será usado después para las reservaciones.
 
-![image](https://github.com/user-attachments/assets/be2022ea-c854-4f7c-b589-bcdb7bf72bfa)
+
+![image](https://github.com/user-attachments/assets/ec339aeb-8381-4f07-825c-0ecdcb91be15)
+
 
 **CABE ACLARAR QUE FALTO LA INTERFAZ PARA MOSTRAR LAS HORARIOS PERO POR MOMENTO LAS RUTAS EN EL CONTROLADOR ESTÁN HABILITADAS**
 
+**RUTA PARA VER LOS HORARIOS** GET '/admin/horario' Por el momento es una función de usuario ADMIN
 
+**RUTA PARA VER LAS RESERVACIONES** GET '/user/reservation'
+
+**RUTA PARA HACER UNA RESERVACIÓN** POST '/{horarioid}/add-seats' Cada horario está compuesto de una película, un horario y una sala de cine y se creo la entidad reservations para administrar
+los asientos para cada película.     
+
+**RUTA PARA HACER UNA RESERVACIÓN** GET '/{horarioid}/occupied-seats' 
+
+![image](https://github.com/user-attachments/assets/c2ea0683-b704-47f2-a780-d04c1f9a0720)
+
+Se pensaba mejorar el sistema de facturación pero por falta de tiempo se quedó así, pero los asientos quedan reservados y bloqueados por lo tanto no pueden volverse a seleccionar
+
+![image](https://github.com/user-attachments/assets/7e7a83fa-2551-4137-9c7c-8fec555c0eb8)
 
 
 Administradores (Admin): Tienen acceso a funciones avanzadas como la gestión de películas y horarios, así como la administración de usuarios y generación de reportes.
